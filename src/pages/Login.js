@@ -27,7 +27,6 @@ export default function Login() {
     else {
       localStorage.setItem("userEmail", cred.email)
       localStorage.setItem("authToken", data.authToken)
-      // console.log(localStorage.getItem("authToken"))
       navigate("/") 
     }
   };

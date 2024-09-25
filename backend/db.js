@@ -18,21 +18,6 @@ const mongoDB = async () => {
     global.food_category = catData;
     // console.log("Fetched data:", global.food_items);
     // console.log("Fetched data:", global.food_category);
-
-    // const fetchedData = await mongoose.connection.db.collection("food_items");
-
-    // await fetchedData.find({}).toArray(async function (err, data) {
-    //   const foodCategory = await mongoose.connection.db.collection(
-    //     "food_category"
-    //   );
-    //   await foodCategory.find({}).toArray(function (err, catData) {
-    //     if (err) console.log(err);
-    //     else {
-    //       global.food_items = data;
-    //       global.food_category = catData;
-    //     }
-    //   });
-    // });
     
   } catch (err) {
     console.error("Error connecting to MongoDB:", err);
