@@ -121,7 +121,7 @@ export default function Home() {
                   foodItem
                     .filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLocaleLowerCase())))
                     .map((filterItems) => {
-                      console.log(filterItems.options);
+                      // console.log(filterItems.options);
                       return (
                         <div
                           key={filterItems._id}

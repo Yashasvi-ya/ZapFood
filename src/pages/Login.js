@@ -21,12 +21,13 @@ export default function Login() {
     });
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     if (!data.success) alert("Enter valid credentials");
     else {
+      localStorage.setItem("userEmail", cred.email)
       localStorage.setItem("authToken", data.authToken)
-      console.log(localStorage.getItem("authToken"))
+      // console.log(localStorage.getItem("authToken"))
       navigate("/") 
     }
   };
