@@ -9,6 +9,10 @@ export default function Home() {
   const [foodCat, setFoodCat] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
 
+  useEffect(() => {
+    loadData();
+  }, []);
+
   const loadData = async () => {
     let response = await fetch("http://localhost:5000/api/foodData", {
       method: "POST",
@@ -22,9 +26,6 @@ export default function Home() {
     setFoodCat(response[1]);
   };
 
-  useEffect(() => {
-    loadData();
-  }, []);
 
   return (
     <div>
@@ -49,12 +50,6 @@ export default function Home() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                {/* <button
-                  className="btn btn-outline-success text-white bg-success"
-                  type="submit"
-                >
-                  Search
-                </button> */}
               </form>
             </div>
             <div className="carousel-item active">
@@ -62,7 +57,7 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="d-block w-100"
                 alt="..."
-                style={{ filter: "brightness(30%)" }}
+                style={{ filter: "brightness(60%)" }}
               />
             </div>
             <div className="carousel-item">
@@ -70,7 +65,7 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="d-block w-100"
                 alt="..."
-                style={{ filter: "brightness(30%)" }}
+                style={{ filter: "brightness(60%)" }}
               />
             </div>
             <div className="carousel-item">
@@ -78,7 +73,7 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1481070414801-51fd732d7184?q=80&w=1924&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="d-block w-100"
                 alt="..."
-                style={{ filter: "brightness(30%)" }}
+                style={{ filter: "brightness(60%)" }}
               />
             </div>
           </div>
@@ -92,7 +87,6 @@ export default function Home() {
               className="carousel-control-prev-icon"
               aria-hidden="true"
             ></span>
-            <span className="visually-hidden">Previous</span>
           </button>
           <button
             className="carousel-control-next"
@@ -104,7 +98,6 @@ export default function Home() {
               className="carousel-control-next-icon"
               aria-hidden="true"
             ></span>
-            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </div>

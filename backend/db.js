@@ -1,7 +1,6 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
-const mongoURI =
-  "mongodb+srv://yashasvi123yy:gxfRGR7eA7W2qIwX@cluster0.nhpqtcp.mongodb.net/zapfood?retryWrites=true&w=majority&appName=Cluster0";
-
+const mongoURI = process.env.connectionString
 const mongoDB = async () => {
   try {
     await mongoose.connect(mongoURI);
@@ -16,8 +15,6 @@ const mongoDB = async () => {
   
     global.food_items = data;
     global.food_category = catData;
-    // console.log("Fetched data:", global.food_items);
-    // console.log("Fetched data:", global.food_category);
     
   } catch (err) {
     console.error("Error connecting to MongoDB:", err);

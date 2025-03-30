@@ -13,7 +13,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <div>
+        <div style={{fontFamily:"Sofadi One"}}>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
